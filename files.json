@@ -1,68 +1,56 @@
 [
   {
-    "name": "William Hope Spirit Photograph, 1919",
-    "downloadName": "recovered_1919_spirit_photo.jpg",
+    "name": "THE GIBSON SPIRIT",
+    "filename": "recovered_spirit_1919.html",
     "year": "1919",
-    "type": "JPG",
     "category": "Spirit Photography",
     "creepiness": 9,
-    "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Williamhopehoax1.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax1.jpg",
-    "description": "A photograph by William Hope presented as showing Mr and Mrs Gibson with the supposed spirit of their deceased son. The archive identifies Hope as a paranormal hoaxer."
+    "description": "William Hope's 1919 photograph of Mr and Mrs Gibson, presented at the time as showing the spirit of their deceased son. The archive identifies Hope as a known paranormal hoaxer.",
+    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax1.jpg"
   },
   {
-    "name": "William Hope Group Spirit Photograph, 1922",
-    "downloadName": "recovered_1922_supernormal_meeting.jpg",
-    "year": "1922",
-    "type": "JPG",
+    "name": "THE TWEEDALE APPARITION",
+    "filename": "recovered_tweedale_1919.html",
+    "year": "1919",
+    "category": "Spirit Photography",
+    "creepiness": 9,
+    "description": "A William Hope photograph of Reverend Charles L. Tweedale and his wife, presented as showing the spirit of her deceased father.",
+    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax3.jpg"
+  },
+  {
+    "name": "THE LEVERSON PHOTOGRAPH",
+    "filename": "recovered_leverson_spirit.html",
+    "year": "1931",
     "category": "Spirit Photography",
     "creepiness": 8,
-    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Williamhopehoax5.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax5.jpg",
-    "description": "A group photograph from a meeting of the Society for the Study of Supernormal Pictures, with a supposed spirit appearing in front."
+    "description": "An alleged spirit photograph by William Hope showing Hortense Leverson with an apparition said to be her deceased husband.",
+    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax4.jpg"
   },
   {
-    "name": "William Hope Leverson Spirit Photograph, 1931",
-    "downloadName": "recovered_1931_leverson_spirit.jpg",
-    "year": "1931",
-    "type": "JPG",
+    "name": "THE LONGCAKE PHOTOGRAPH",
+    "filename": "recovered_longcake_spirit.html",
+    "year": "20th century",
     "category": "Spirit Photography",
     "creepiness": 9,
-    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Williamhopehoax4.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax4.jpg",
-    "description": "An alleged spirit photograph showing Mrs Hortense Leverson with what was claimed to be the spirit of her deceased husband."
+    "description": "A William Hope image presented as showing Mrs Longcake alongside the supposed spirit of her deceased sister-in-law.",
+    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax6.jpg"
   },
   {
-    "name": "Mrs Longcake Spirit Photograph",
-    "downloadName": "recovered_longcake_spirit.jpg",
-    "year": "Between WWI and WWII",
-    "type": "JPG",
-    "category": "Spirit Photography",
-    "creepiness": 9,
-    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Williamhopehoax6.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax6.jpg",
-    "description": "A William Hope photograph presented as showing Mrs Longcake beside the supposed spirit of her deceased sister-in-law."
-  },
-  {
-    "name": "Plague Doctor Engraving",
-    "downloadName": "recovered_plague_doctor_1841.png",
+    "name": "THE PLAGUE DOCTOR",
+    "filename": "recovered_plague_doctor_1841.html",
     "year": "1841 or earlier",
-    "type": "PNG",
     "category": "Macabre History",
     "creepiness": 8,
-    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Plague_Doctor_(The_Mirror_of_literature,_1841).png",
-    "source": "https://commons.wikimedia.org/wiki/File:Plague_Doctor_(The_Mirror_of_literature,_1841).png",
-    "description": "A nineteenth-century plague-doctor image published in The Mirror of Literature, Amusement, and Instruction."
+    "description": "A nineteenth-century plague-doctor engraving published in The Mirror of Literature, Amusement, and Instruction, based on an earlier plague-treatise image.",
+    "source": "https://commons.wikimedia.org/wiki/File:Plague_Doctor_(The_Mirror_of_literature,_1841).png"
   },
   {
-    "name": "Danse Macabre, 1922",
-    "downloadName": "recovered_danse_macabre_1922.jpg",
+    "name": "DANSE MACABRE",
+    "filename": "recovered_danse_macabre_1922.html",
     "year": "1922",
-    "type": "JPG",
     "category": "Macabre Film",
-    "creepiness": 7,
-    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Danse_macabre_(1922)_-_1.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File:Danse_macabre_(1922)_-_1.jpg",
-    "description": "A surviving image connected to the 1922 silent film Danse Macabre."
+    "creepiness": 8,
+    "description": "A surviving image connected to the 1922 silent production Danse Macabre.",
+    "source": "https://commons.wikimedia.org/wiki/File:Danse_macabre_(1922)_-_1.jpg"
   }
 ]

@@ -1,106 +1,71 @@
-let artifacts=[];
+let files=[];
 let last=-1;
 let busy=false;
 
 const $=id=>document.getElementById(id);
-const terminal=$("terminalText");
-const dig=$("dig");
+const logBox=$("log");
+
+function line(text){
+    const p=document.createElement("p");
+    p.textContent="> "+text;
+    logBox.appendChild(p);
+    logBox.scrollTop=logBox.scrollHeight;
+}
+
+function sleep(ms){
+    return new Promise(r=>setTimeout(r,ms));
+}
 
 fetch("files.json")
 .then(r=>r.json())
 .then(data=>{
-    artifacts=data;
-    log("artifact index loaded: "+artifacts.length+" recoverable records.");
+    files=data;
+    line("index loaded: "+files.length+" recoverable artifacts.");
 })
-.catch(()=>{
-    log("ERROR: files.json could not be loaded.");
-});
+.catch(()=>line("ERROR: failed to load artifact index."));
 
-function log(text){
-    const p=document.createElement("p");
-    p.textContent="> "+text;
-    terminal.appendChild(p);
-    terminal.scrollTop=terminal.scrollHeight;
-}
-
-function chooseArtifact(){
-    let i=0;
-    do{
-        i=Math.floor(Math.random()*artifacts.length);
-    }while(artifacts.length>1&&i===last);
-    last=i;
-    return artifacts[i];
-}
-
-async function forceDownload(artifact){
-    try{
-        const response=await fetch(artifact.url,{mode:"cors"});
-        if(!response.ok) throw new Error("HTTP "+response.status);
-        const blob=await response.blob();
-        const objectUrl=URL.createObjectURL(blob);
-        const a=document.createElement("a");
-        a.href=objectUrl;
-        a.download=artifact.downloadName;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        setTimeout(()=>URL.revokeObjectURL(objectUrl),5000);
-        return true;
-    }catch(err){
-        console.warn("Automatic blob download failed:",err);
-        const a=document.createElement("a");
-        a.href=artifact.url;
-        a.download=artifact.downloadName;
-        a.target="_blank";
-        a.rel="noopener";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        return false;
-    }
-}
-
-async function digUp(){
-    if(busy||!artifacts.length)return;
+async function recover(){
+    if(busy||!files.length)return;
     busy=true;
-    dig.disabled=true;
+    $("dig").disabled=true;
     $("reveal").classList.add("hidden");
 
-    const artifact=chooseArtifact();
+    let i;
+    do{
+        i=Math.floor(Math.random()*files.length);
+    }while(files.length>1&&i===last);
+    last=i;
 
-    log("scanning dead links...");
-    await wait(350);
-    log("signal recovered from "+artifact.year+".");
-    await wait(400);
-    log("extracting "+artifact.type+" artifact...");
-    await wait(350);
-    log("initiating download.");
+    const f=files[i];
 
-    const forced=await forceDownload(artifact);
+    line("searching local grave sectors...");
+    await sleep(360);
+    line("artifact signature detected.");
+    await sleep(420);
+    line("recovering "+f.filename+"...");
+    await sleep(420);
 
-    $("name").textContent=artifact.name;
-    $("year").textContent=artifact.year;
-    $("type").textContent=artifact.type;
-    $("category").textContent=artifact.category;
-    $("creepy").textContent="█".repeat(artifact.creepiness)+"░".repeat(10-artifact.creepiness)+" "+artifact.creepiness+"/10";
-    $("description").textContent=artifact.description;
-    $("source").href=artifact.source;
-    $("downloadStatus").textContent=forced
-        ? "✓ Download requested: "+artifact.downloadName
-        : "⚠ The archive blocked forced download, so the original file was opened instead.";
+    const a=document.createElement("a");
+    a.href="files/"+encodeURIComponent(f.filename);
+    a.download=f.filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
 
+    line("download dispatched.");
+    $("name").textContent=f.name;
+    $("filename").textContent=f.filename;
+    $("year").textContent=f.year;
+    $("creepy").textContent="█".repeat(f.creepiness)+"░".repeat(10-f.creepiness)+" "+f.creepiness+"/10";
+    $("description").textContent=f.description;
+    $("source").href=f.source;
     $("reveal").classList.remove("hidden");
-    log("recovery complete: "+artifact.downloadName);
 
     busy=false;
-    dig.disabled=false;
+    $("dig").disabled=false;
     $("reveal").scrollIntoView({behavior:"smooth",block:"start"});
 }
 
-function wait(ms){
-    return new Promise(resolve=>setTimeout(resolve,ms));
-}
-
-dig.addEventListener("click",digUp);
-$("again").addEventListener("click",digUp);
+$("dig").onclick=recover;
+$("again").onclick=recover;
 setInterval(()=>$("clock").textContent=new Date().toLocaleTimeString(),1000);

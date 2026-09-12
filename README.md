@@ -1,35 +1,31 @@
-# Digital Graveyard v2
+# Digital Graveyard v3
 
-A GitHub Pages site that downloads a random real historical artifact from a public internet archive, then reveals what you recovered.
+This is the reliable-download build.
 
-## How it works
+## What changed
 
-1. Click **DIG UP A FILE**.
-2. JavaScript selects a random artifact from `files.json`.
-3. The browser fetches the original archive file.
-4. It converts the file to a Blob and triggers a download.
-5. The site reveals what you recovered.
+Previous versions attempted to force-download files directly from Wikimedia Commons. Browsers can block that because the download comes from a different origin.
 
-If a source blocks cross-origin fetching, the page falls back to opening the original file.
+v3 downloads a small local HTML artifact viewer from this repository instead. The downloaded viewer then displays the real historical public-domain image from its archive source when opened.
 
-## Safety
+## Upload to GitHub
 
-The curated list excludes executables, malware, leaked/private files, gore, and dangerous payloads.
+Replace/update:
 
-## GitHub setup
+- `index.html`
+- `style.css`
+- `script.js`
+- `files.json`
+- `README.md`
 
-1. Create a new GitHub repository.
-2. Upload these files to the repository root:
-   - `index.html`
-   - `style.css`
-   - `script.js`
-   - `files.json`
-   - `README.md`
-3. Go to **Settings → Pages**.
-4. Choose **Deploy from a branch**.
-5. Select the main branch and `/ (root)`.
-6. Save.
+Also upload the entire new `files/` folder.
 
-## Adding more artifacts
+Do not rename the `files` folder.
 
-Edit `files.json` and add another entry with a direct file URL plus its archive source page.
+## GitHub Pages
+
+Keep the files at the repository root. `files/` should be directly beside `index.html`.
+
+## Sources
+
+The current collection links to Wikimedia Commons public archive records. Each downloaded artifact viewer contains a link to its original record.

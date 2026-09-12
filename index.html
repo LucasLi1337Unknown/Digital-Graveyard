@@ -4,59 +4,52 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Digital Graveyard</title>
-<meta name="description" content="Dig up a random real historical artifact from the public internet.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="grain"></div>
+<div class="scanlines"></div>
 <main>
 <header>
 <div>
-<div class="eyebrow">INTERNET RECOVERY TERMINAL // SAFE PUBLIC ARCHIVE</div>
+<div class="eyebrow">SECTOR 06 // INTERNET RECOVERY TERMINAL</div>
 <h1>DIGITAL<br>GRAVEYARD</h1>
-<p class="intro">Press one button. Something old gets dragged out of the internet and dropped into your Downloads folder.</p>
+<p class="intro">One click. One random artifact. The recovered file is downloaded before you know what it is.</p>
 </div>
-<div class="status"><span></span> ARCHIVE ONLINE</div>
+<div class="online"><i></i> ARCHIVE ONLINE</div>
 </header>
 
 <section class="terminal">
-<div class="bar">
-<span>graveyard://sector_06</span>
-<span id="clock">--:--:--</span>
-</div>
-<div id="terminalText" class="terminalText">
-<p>&gt; connection established.</p>
-<p>&gt; no artifact selected.</p>
-<p class="muted">&gt; warning: downloads are real historical files from public archives.</p>
+<div class="topline"><span>graveyard://local-vault</span><span id="clock">--:--:--</span></div>
+<div id="log" class="log">
+<p>&gt; local vault mounted.</p>
+<p>&gt; waiting for recovery request.</p>
+<p class="faint">&gt; no executables // no malware // public historical sources only</p>
 </div>
 </section>
 
 <button id="dig" class="dig">DIG UP A FILE</button>
 
 <section id="reveal" class="reveal hidden">
-<div class="label">RECOVERY COMPLETE</div>
+<div class="label">YOU JUST DOWNLOADED</div>
 <h2 id="name"></h2>
 <div class="meta">
+<div><span>FILE</span><b id="filename"></b></div>
 <div><span>YEAR</span><b id="year"></b></div>
-<div><span>TYPE</span><b id="type"></b></div>
-<div><span>CATEGORY</span><b id="category"></b></div>
+<div><span>TYPE</span><b>HTML ARTIFACT VIEWER</b></div>
 <div><span>CREEPINESS</span><b id="creepy"></b></div>
 </div>
 <p id="description"></p>
-<p id="downloadStatus" class="downloadStatus"></p>
-<div class="links">
-<a id="source" href="#" target="_blank" rel="noopener">VIEW ORIGINAL ARCHIVE RECORD</a>
+<div class="buttons">
 <button id="again" class="secondary">DIG AGAIN</button>
+<a id="source" href="#" target="_blank" rel="noopener">ORIGINAL ARCHIVE RECORD</a>
 </div>
 </section>
 
-<section class="about">
-<h3>WHAT IS THIS?</h3>
-<p>Digital Graveyard does not create fake horror files. It selects historical public-domain artifacts from public archives, tries to download the original file automatically, then tells you what you recovered.</p>
-<p>No executables. No malware. No leaked private files. No gore.</p>
+<section class="explain">
+<h3>WHY HTML FILES?</h3>
+<p>The recovered file itself lives inside this GitHub repository, so your browser can download it reliably. Open the downloaded file and it loads the real historical public-archive artifact inside it. This avoids the cross-origin download block that broke the previous version.</p>
 </section>
-
-<footer>Digital Graveyard // v2</footer>
+<footer>Digital Graveyard v3 // DO NOT FEED AFTER MIDNIGHT</footer>
 </main>
 <script src="script.js"></script>
 </body>
