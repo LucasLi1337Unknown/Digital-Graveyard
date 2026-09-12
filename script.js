@@ -1,23 +1,106 @@
-let files=[],last=-1,log=[];
+let artifacts=[];
+let last=-1;
+let busy=false;
+
 const $=id=>document.getElementById(id);
-fetch("files.json").then(r=>r.json()).then(x=>{files=x;write("archive index loaded: "+files.length+" artifacts found.");}).catch(()=>write("ERROR: could not load files.json"));
-function write(t){const p=document.createElement("p");p.textContent="> "+t;$("screen").appendChild(p);$("screen").scrollTop=$("screen").scrollHeight}
-function dig(){
- if(!files.length)return;
- let i;do{i=Math.floor(Math.random()*files.length)}while(files.length>1&&i===last);last=i;
- const f=files[i];
- write("scanning abandoned sectors...");
- setTimeout(()=>write("artifact signature detected: "+f.type),250);
- setTimeout(()=>{
-  write("recovery complete.");
-  $("name").textContent=f.name;$("type").textContent=f.type;$("year").textContent=f.year;$("category").textContent=f.category;
-  $("creepy").textContent="█".repeat(f.creepiness)+"░".repeat(10-f.creepiness)+" "+f.creepiness+"/10";
-  $("description").textContent=f.description;$("download").href=f.download;$("source").href=f.source;
-  $("artifact").classList.remove("hidden");
-  log.unshift(f);renderLog();$("artifact").scrollIntoView({behavior:"smooth",block:"start"});
- },650);
+const terminal=$("terminalText");
+const dig=$("dig");
+
+fetch("files.json")
+.then(r=>r.json())
+.then(data=>{
+    artifacts=data;
+    log("artifact index loaded: "+artifacts.length+" recoverable records.");
+})
+.catch(()=>{
+    log("ERROR: files.json could not be loaded.");
+});
+
+function log(text){
+    const p=document.createElement("p");
+    p.textContent="> "+text;
+    terminal.appendChild(p);
+    terminal.scrollTop=terminal.scrollHeight;
 }
-function renderLog(){$("historyList").innerHTML=log.length?log.map((f,i)=>`<div class="history-item">${String(log.length-i).padStart(2,"0")} // ${f.name} // ${f.year} // ${f.type}</div>`).join(""):"<div class='history-item'>No recoveries yet.</div>"}
-$("dig").onclick=dig;
-$("historyBtn").onclick=()=>{$("history").classList.toggle("hidden");renderLog()};
+
+function chooseArtifact(){
+    let i=0;
+    do{
+        i=Math.floor(Math.random()*artifacts.length);
+    }while(artifacts.length>1&&i===last);
+    last=i;
+    return artifacts[i];
+}
+
+async function forceDownload(artifact){
+    try{
+        const response=await fetch(artifact.url,{mode:"cors"});
+        if(!response.ok) throw new Error("HTTP "+response.status);
+        const blob=await response.blob();
+        const objectUrl=URL.createObjectURL(blob);
+        const a=document.createElement("a");
+        a.href=objectUrl;
+        a.download=artifact.downloadName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(()=>URL.revokeObjectURL(objectUrl),5000);
+        return true;
+    }catch(err){
+        console.warn("Automatic blob download failed:",err);
+        const a=document.createElement("a");
+        a.href=artifact.url;
+        a.download=artifact.downloadName;
+        a.target="_blank";
+        a.rel="noopener";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        return false;
+    }
+}
+
+async function digUp(){
+    if(busy||!artifacts.length)return;
+    busy=true;
+    dig.disabled=true;
+    $("reveal").classList.add("hidden");
+
+    const artifact=chooseArtifact();
+
+    log("scanning dead links...");
+    await wait(350);
+    log("signal recovered from "+artifact.year+".");
+    await wait(400);
+    log("extracting "+artifact.type+" artifact...");
+    await wait(350);
+    log("initiating download.");
+
+    const forced=await forceDownload(artifact);
+
+    $("name").textContent=artifact.name;
+    $("year").textContent=artifact.year;
+    $("type").textContent=artifact.type;
+    $("category").textContent=artifact.category;
+    $("creepy").textContent="█".repeat(artifact.creepiness)+"░".repeat(10-artifact.creepiness)+" "+artifact.creepiness+"/10";
+    $("description").textContent=artifact.description;
+    $("source").href=artifact.source;
+    $("downloadStatus").textContent=forced
+        ? "✓ Download requested: "+artifact.downloadName
+        : "⚠ The archive blocked forced download, so the original file was opened instead.";
+
+    $("reveal").classList.remove("hidden");
+    log("recovery complete: "+artifact.downloadName);
+
+    busy=false;
+    dig.disabled=false;
+    $("reveal").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+function wait(ms){
+    return new Promise(resolve=>setTimeout(resolve,ms));
+}
+
+dig.addEventListener("click",digUp);
+$("again").addEventListener("click",digUp);
 setInterval(()=>$("clock").textContent=new Date().toLocaleTimeString(),1000);

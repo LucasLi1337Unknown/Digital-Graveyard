@@ -1,26 +1,35 @@
-# Digital Graveyard
+# Digital Graveyard v2
 
-A creepy-but-safe GitHub Pages experiment that randomly surfaces real historical internet artifacts from public archive records.
+A GitHub Pages site that downloads a random real historical artifact from a public internet archive, then reveals what you recovered.
 
-## What it does
+## How it works
 
-Press **DIG UP A FILE** and the site selects a real historical artifact. The file itself remains hosted by the original archive; this project links to the archive's original-file redirect and source record.
+1. Click **DIG UP A FILE**.
+2. JavaScript selects a random artifact from `files.json`.
+3. The browser fetches the original archive file.
+4. It converts the file to a Blob and triggers a download.
+5. The site reveals what you recovered.
+
+If a source blocks cross-origin fetching, the page falls back to opening the original file.
 
 ## Safety
 
-This collection intentionally excludes executables, malware, leaked/private material, gore, and dangerous payloads. Current artifacts are historical public-domain spirit-photography images hosted by Wikimedia Commons.
+The curated list excludes executables, malware, leaked/private files, gore, and dangerous payloads.
 
-## Deploy
+## GitHub setup
 
-Upload the files in this folder to the root of a GitHub repository, then enable GitHub Pages for the repository.
+1. Create a new GitHub repository.
+2. Upload these files to the repository root:
+   - `index.html`
+   - `style.css`
+   - `script.js`
+   - `files.json`
+   - `README.md`
+3. Go to **Settings → Pages**.
+4. Choose **Deploy from a branch**.
+5. Select the main branch and `/ (root)`.
+6. Save.
 
-## Files
+## Adding more artifacts
 
-- `index.html` — interface
-- `style.css` — visual design
-- `script.js` — random recovery system
-- `files.json` — curated artifact database
-
-## Sources
-
-Every artifact includes its original Wikimedia Commons source record in `files.json`. Licensing and provenance should be checked on the linked source page before redistributing any artifact.
+Edit `files.json` and add another entry with a direct file URL plus its archive source page.

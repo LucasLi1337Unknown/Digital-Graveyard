@@ -1,112 +1,68 @@
 [
   {
-    "name": "William Hope Spirit Photograph #1",
-    "file": "Williamhopehoax1.jpg",
+    "name": "William Hope Spirit Photograph, 1919",
+    "downloadName": "recovered_1919_spirit_photo.jpg",
     "year": "1919",
     "type": "JPG",
     "category": "Spirit Photography",
-    "creepiness": 8,
-    "description": "A 1919 'spirit photograph' by William Hope, a photographer associated with staged paranormal images. It supposedly shows a deceased son appearing with his parents.",
+    "creepiness": 9,
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Williamhopehoax1.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax1.jpg",
-    "download": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Williamhopehoax1.jpg"
+    "description": "A photograph by William Hope presented as showing Mr and Mrs Gibson with the supposed spirit of their deceased son. The archive identifies Hope as a paranormal hoaxer."
   },
   {
-    "name": "William Hope Spirit Photograph #4",
-    "file": "Williamhopehoax4.jpg",
-    "year": "1931",
+    "name": "William Hope Group Spirit Photograph, 1922",
+    "downloadName": "recovered_1922_supernormal_meeting.jpg",
+    "year": "1922",
     "type": "JPG",
     "category": "Spirit Photography",
     "creepiness": 8,
-    "description": "An alleged spirit photograph showing Hortense Leverson with an apparition said to be her deceased husband.",
-    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax4.jpg",
-    "download": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Williamhopehoax4.jpg"
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Williamhopehoax5.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax5.jpg",
+    "description": "A group photograph from a meeting of the Society for the Study of Supernormal Pictures, with a supposed spirit appearing in front."
   },
   {
-    "name": "Marshal Haig Funeral Spirit Photograph",
-    "file": "Marshal_Haig_spirit_photograph.png",
-    "year": "1928 / published 1939",
-    "type": "PNG",
-    "category": "Funeral Photograph",
+    "name": "William Hope Leverson Spirit Photograph, 1931",
+    "downloadName": "recovered_1931_leverson_spirit.jpg",
+    "year": "1931",
+    "type": "JPG",
+    "category": "Spirit Photography",
     "creepiness": 9,
-    "description": "An alleged spirit photograph from Marshal Douglas Haig's funeral. The image has been suspected of being a double exposure.",
-    "source": "https://commons.wikimedia.org/wiki/File:Marshal_Haig_spirit_photograph.png",
-    "download": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Marshal_Haig_spirit_photograph.png"
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Williamhopehoax4.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax4.jpg",
+    "description": "An alleged spirit photograph showing Mrs Hortense Leverson with what was claimed to be the spirit of her deceased husband."
   },
   {
     "name": "Mrs Longcake Spirit Photograph",
-    "file": "Williamhopehoax6.jpg",
+    "downloadName": "recovered_longcake_spirit.jpg",
     "year": "Between WWI and WWII",
     "type": "JPG",
     "category": "Spirit Photography",
     "creepiness": 9,
-    "description": "A William Hope photograph purportedly showing Mrs Longcake alongside the spirit of her deceased sister-in-law.",
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Williamhopehoax6.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax6.jpg",
-    "download": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Williamhopehoax6.jpg"
+    "description": "A William Hope photograph presented as showing Mrs Longcake beside the supposed spirit of her deceased sister-in-law."
   },
   {
-    "name": "Society for Supernormal Pictures",
-    "file": "Williamhopehoax5.jpg",
+    "name": "Plague Doctor Engraving",
+    "downloadName": "recovered_plague_doctor_1841.png",
+    "year": "1841 or earlier",
+    "type": "PNG",
+    "category": "Macabre History",
+    "creepiness": 8,
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Plague_Doctor_(The_Mirror_of_literature,_1841).png",
+    "source": "https://commons.wikimedia.org/wiki/File:Plague_Doctor_(The_Mirror_of_literature,_1841).png",
+    "description": "A nineteenth-century plague-doctor image published in The Mirror of Literature, Amusement, and Instruction."
+  },
+  {
+    "name": "Danse Macabre, 1922",
+    "downloadName": "recovered_danse_macabre_1922.jpg",
     "year": "1922",
     "type": "JPG",
-    "category": "Group Photograph",
-    "creepiness": 8,
-    "description": "A photograph from a meeting of the Society for the Study of Supernormal Pictures, with a supposed spirit appearing in front of the group.",
-    "source": "https://commons.wikimedia.org/wiki/File:Williamhopehoax5.jpg",
-    "download": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Williamhopehoax5.jpg"
-  },
-  {
-    "name": "Charles Foster Spirit Photograph",
-    "file": "Charles_Foster_spirit_photograph.png",
-    "year": "1884",
-    "type": "PNG",
-    "category": "19th Century",
+    "category": "Macabre Film",
     "creepiness": 7,
-    "description": "An alleged spirit photograph of medium Charles Foster, reproduced in an 1884 book on spiritualism.",
-    "source": "https://commons.wikimedia.org/wiki/File:Charles_Foster_spirit_photograph.png",
-    "download": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Charles_Foster_spirit_photograph.png"
-  },
-  {
-    "name": "Dog Spirit Photograph",
-    "file": "Dog_spirit_photograph.png",
-    "year": "1939",
-    "type": "PNG",
-    "category": "Animal Spirit Photograph",
-    "creepiness": 7,
-    "description": "A historical image presented as an alleged spirit photograph of a dog.",
-    "source": "https://commons.wikimedia.org/wiki/File:Dog_spirit_photograph.png",
-    "download": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Dog_spirit_photograph.png"
-  },
-  {
-    "name": "Fake Spirit Photograph Example",
-    "file": "Fake_spirit_photograph_example.png",
-    "year": "1897",
-    "type": "PNG",
-    "category": "Photography Trick",
-    "creepiness": 8,
-    "description": "An 1897 example demonstrating a fake spirit photograph from Henry Ridgely Evans' writing on nineteenth-century ghost tricks.",
-    "source": "https://commons.wikimedia.org/wiki/File:Fake_spirit_photograph_example.png",
-    "download": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Fake_spirit_photograph_example.png"
-  },
-  {
-    "name": "William Barrett Spirit Photograph",
-    "file": "William_Barrett_spirit_photograph.png",
-    "year": "1924",
-    "type": "PNG",
-    "category": "Psychical Research",
-    "creepiness": 8,
-    "description": "Psychical researchers William F. Barrett and Stanley De Brath in an alleged spirit photograph taken by William Hope.",
-    "source": "https://commons.wikimedia.org/wiki/File:William_Barrett_spirit_photograph.png",
-    "download": "https://commons.wikimedia.org/wiki/Special:Redirect/file/William_Barrett_spirit_photograph.png"
-  },
-  {
-    "name": "Stainton Moses Spirit Photograph",
-    "file": "Stainton_Moses_Spirit_photograph.png",
-    "year": "1882",
-    "type": "PNG",
-    "category": "19th Century",
-    "creepiness": 8,
-    "description": "An alleged spirit photograph featuring medium William Stainton Moses, published in 1882.",
-    "source": "https://commons.wikimedia.org/wiki/File:Stainton_Moses_Spirit_photograph.png",
-    "download": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stainton_Moses_Spirit_photograph.png"
+    "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Danse_macabre_(1922)_-_1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Danse_macabre_(1922)_-_1.jpg",
+    "description": "A surviving image connected to the 1922 silent film Danse Macabre."
   }
 ]
